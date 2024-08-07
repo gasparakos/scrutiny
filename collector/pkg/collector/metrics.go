@@ -120,7 +120,7 @@ func (mc *MetricsCollector) Collect(deviceWWN string, deviceName string, deviceT
 		mc.logger.Errorf("no device WWN detected for %s. Skipping collection for this device (no data association possible).\n", deviceName)
 		return
 	}
-	mc.logger.Infof("Collecting smartctl results for %s\n", deviceName)
+	mc.logger.Infof("Collecting smartctl results for --device %s %s\n", deviceType, deviceName)
 
 	fullDeviceName := fmt.Sprintf("%s%s", detect.DevicePrefix(), deviceName)
 	args := strings.Split(mc.config.GetCommandMetricsSmartArgs(fullDeviceName), " ")
