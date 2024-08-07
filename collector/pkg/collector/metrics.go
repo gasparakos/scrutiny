@@ -124,7 +124,7 @@ func (mc *MetricsCollector) Collect(scrutiny_uuid uuid.UUID, deviceName string, 
 		mc.logger.Errorf("no scrutiny UUID was created for %s. Skipping collection for this device (no data association possible).\n", deviceName)
 		return
 	}
-	mc.logger.Infof("Collecting smartctl results for --device %s %s\n", deviceType, deviceName)
+	mc.logger.Infof("Collecting smartctl results for --device %s %s \n", deviceType, deviceName)
 
 	fullDeviceName := fmt.Sprintf("%s%s", detect.DevicePrefix(), deviceName)
 	args := strings.Split(mc.config.GetCommandMetricsSmartArgs(fullDeviceName), " ")
